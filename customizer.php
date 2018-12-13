@@ -161,7 +161,53 @@ function RentIt_Mobile_customizer($wp_customize){
         'settings' => $tmp_settingname,
         'type' => 'checkbox',
     ));
+  /***************************page_widgets****************************//*
 
-	/*<MYEDIT*/
+
+    $wp_customize->add_section($tmp_sectionname . '_footer_widgets_section', array(
+        'title' => esc_html__('Footer Widgets Visibility', 'rentit'),
+        'priority' => 31,
+        'description' => esc_html__('This section is dedicated for showing or hiding header and footer on mobile or tablet devices.', 'rentit'),
+		'panel' =>  $tmp_panelname,
+));
+    $tmp_settingname = $tmp_sectionname . '_footer_widgets_mobile';
+
+    $wp_customize->add_setting($tmp_settingname, array('default' => NULL,
+        'sanitize_callback' => 'wp_kses_post'));
+
+    $wp_customize->add_control($tmp_settingname . '_control', array(
+        'label' => esc_html__('Hide footer widgets on mobile', 'rentit'),
+        'section' => $tmp_sectionname . "_footer_widgets_section",
+        'settings' => $tmp_settingname,
+        'type' => 'checkbox',
+    ));
+
+	$tmp_settingname = $tmp_sectionname . '_footer_widgets_tablet';
+
+    $wp_customize->add_setting($tmp_settingname, array('default' => NULL,
+        'sanitize_callback' => 'wp_kses_post'));
+
+    $wp_customize->add_control($tmp_settingname . '_control', array(
+        'label' => esc_html__('Hide footer widgets on tablet', 'rentit'),
+        'section' => $tmp_sectionname . "_footer_widgets_section",
+        'settings' => $tmp_settingname,
+        'type' => 'checkbox',
+    ));
+
+	$tmp_settingname = $tmp_sectionname . '_footer_widgets_desktop';
+
+    $wp_customize->add_setting($tmp_settingname, array('default' => NULL,
+        'sanitize_callback' => 'wp_kses_post'));
+
+    $wp_customize->add_control($tmp_settingname . '_control', array(
+        'label' => esc_html__('Hide footer widgets on desktop', 'rentit'),
+        'section' => $tmp_sectionname . "_footer_widgets_section",
+        'settings' => $tmp_settingname,
+        'type' => 'checkbox',
+    ));
+
+	
+*/
+	
 }
 add_action('customize_register', 'RentIt_Mobile_customizer');

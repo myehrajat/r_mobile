@@ -21,15 +21,15 @@ function RentIt_Mobile_hide(){
 	//var_dump(get_theme_mod('mobile_app_header_desktop', 0));
 	$hide = array(
 		//1 means hide 0 means show
-		'admin_bar' =>get_theme_mod('mobile_app_admin_bar', 0),
+		'admin_bar' =>get_theme_mod('mobile_app_admin_bar', NULL),
 		
-		'header_mobile' =>get_theme_mod('mobile_app_header_mobile', 0),
-		'header_tablet' =>get_theme_mod('mobile_app_header_tablet', 0),
-		'header_desktop' =>get_theme_mod('mobile_app_header_desktop', 0),
+		'header_mobile' =>get_theme_mod('mobile_app_header_mobile',NULL),
+		'header_tablet' =>get_theme_mod('mobile_app_header_tablet', NULL),
+		'header_desktop' =>get_theme_mod('mobile_app_header_desktop', NULL),
 		
-		'footer_mobile' =>get_theme_mod('mobile_app_footer_mobile', 0),
-		'footer_tablet' =>get_theme_mod('mobile_app_footer_tablet', 0),
-		'footer_desktop' =>get_theme_mod('mobile_app_footer_desktop', 0),
+		'footer_mobile' =>get_theme_mod('mobile_app_footer_mobile', NULL),
+		'footer_tablet' =>get_theme_mod('mobile_app_footer_tablet', NULL),
+		'footer_desktop' =>get_theme_mod('mobile_app_footer_desktop', NULL),
 		
 		'footer_widgets_mobile' =>get_theme_mod('mobile_app_footer_widgets_mobile', 0),
 		'footer_widgets_tablet' =>get_theme_mod('mobile_app_footer_widgets_tablet', 0),
