@@ -35,6 +35,9 @@ function RentIt_Mobile_hide(){
 		'footer_widgets_tablet' =>get_theme_mod('mobile_app_footer_widgets_tablet', 0),
 		'footer_widgets_desktop' =>get_theme_mod('mobile_app_footer_widgets_desktop', 0),
 	);
+	if($hide['admin_bar']){
+		add_action('get_header', 'remove_admin_login_header');
+	}
 	//var_dump($hide);
 	if($detect->isMobile()){
 		$hide['type']='mobile';
@@ -48,5 +51,6 @@ function RentIt_Mobile_hide(){
 
 }
 
-
-
+function remove_admin_login_header() {
+    remove_action('wp_head', '_admin_bar_bump_cb');
+}

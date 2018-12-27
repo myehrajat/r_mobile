@@ -1,6 +1,6 @@
 /* these elements should not be seen on the mobile or tablet so we remove it*/
 jQuery( document ).ready( function( $ ) {
-
+/*
 	if(hide.admin_bar){
 		jQuery("#wpadminbar").remove();
 		if(typeof jQuery("html").attr("style") === 'undefined'){
@@ -9,7 +9,7 @@ jQuery( document ).ready( function( $ ) {
 			jQuery("html").attr("style", "margin:0px !important; "+jQuery("html").attr("style"));
 		}
 	}
-
+*/
 	switch(hide.type){
 		case "mobile":
 			delete_element(hide.header_mobile,hide.footer_mobile,hide.footer_widgets_mobile);
