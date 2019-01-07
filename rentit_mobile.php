@@ -35,8 +35,9 @@ function RentIt_Mobile_hide(){
 		'footer_widgets_tablet' =>get_theme_mod('mobile_app_footer_widgets_tablet', 0),
 		'footer_widgets_desktop' =>get_theme_mod('mobile_app_footer_widgets_desktop', 0),
 	);
-	if($hide['admin_bar']){
-		add_action('get_header', 'remove_admin_login_header');
+	if($hide['admin_bar'] or $_GET['admin_bar']==false){
+		//https://codex.wordpress.org/Function_Reference/show_admin_bar
+		show_admin_bar( false );
 	}
 	//var_dump($hide);
 	if($detect->isMobile()){
@@ -49,8 +50,4 @@ function RentIt_Mobile_hide(){
 	wp_enqueue_script( 'renita_delete_mobile',plugins_url("delete-header-and-footer.js",__FILE__ ), array( 'jquery' ), '1.0.0', true );
 	wp_localize_script( 'renita_delete_mobile', 'hide',$hide );
 
-}
-
-function remove_admin_login_header() {
-    remove_action('wp_head', '_admin_bar_bump_cb');
 }
